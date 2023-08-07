@@ -1,0 +1,70 @@
+package Tutorial
+import scala.io.StdIn
+
+object Q1 {
+  def main(args: Array[String]): Unit = {
+    print("Enter the list of integer: ")
+    val InString = StdIn.readLine()
+    val InputList = InString.split(",").map(_.trim.toInt).toList
+
+    val display = filterEvenNumbers(InputList)
+    println("\n"+display)
+
+  }
+
+  def filterEvenNumbers(numbers:List[Int]):List[Int] = {
+    numbers.filter(num => num%2==0)
+    }
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+package Tutorial
+
+import scala.io.StdIn
+
+object Q2 {
+  def main(args: Array[String]): Unit = {
+    print("Enter the list of integers : ")
+    val InString = StdIn.readLine()
+    val InputList = InString.split(",").map(_.trim.toInt).toList
+
+    val display = calculateSquare(InputList)
+    println("\n" + display)
+
+  }
+
+  def calculateSquare(numbers: List[Int]): List[Int] = {
+    numbers.map(num =>num*num)
+    }
+
+}
+----------------------------------------------------------------------------------------------------------------------------------
+package Tutorial
+
+import scala.io.StdIn
+
+object Q3 {
+  def main(args: Array[String]): Unit = {
+    print("Enter the list of integer: ")
+    val InString = StdIn.readLine()
+    val InputList = InString.split(",").map(_.trim.toInt).toList
+
+    val display = filterPrime(InputList)
+    println("\n" + display)
+
+  }
+  def filterPrime(numbers: List[Int]): List[Int] = {
+    numbers.filter(ChrckPrime)
+  }
+
+  def ChrckPrime(number: Int): Boolean = {
+    if (number <= 1) {
+      false
+    } else if (number == 2) {
+      true
+    } else {
+      !(2 to Math.sqrt(number).toInt).exists(i => number % i == 0)
+      }
+    }
+
+
+}
