@@ -1,0 +1,28 @@
+object Main {
+  def main(args: Array[String]): Unit = {
+      def calculateAverage(tempInCelsius: List[Int]): Double = {
+    val TempInFahrenheit = tempInCelsius.map(tempInCelsius => ((tempInCelsius * 9)/5) + 32)
+    val sum = TempInFahrenheit.reduce((x, y) => x + y)
+    val average = sum / tempInCelsius.length
+    average
+  }
+
+def countLetterOccurrences(str:List[String]):Int={
+    val len=str.map(str=>str.length)
+    val totalCountOfLetters=len.reduce((x,y) => x + y)
+    totalCountOfLetters
+  }
+
+  def main(args: Array[String]): Unit = {
+//Q1
+    val temperature = List(0, 10, 20, 30)
+    println("Average Fahrenheit temperature: " + calculateAverage(temperature))
+
+//Q2
+val string=List("apple", "banana", "cherry", "date")
+    println("Total count of letter occurrences: "+countLetterOccurrences(string))
+  }
+  }
+}
+
+
